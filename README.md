@@ -44,8 +44,8 @@ The webpage also shows statistics for other scheduling algorithms like First-Com
   https://localhost:5000
   ```
   This will load the frontend interface where you can input task details and view scheduling statistics. 
-![img1]()
-![img2]()
+![img1](pics/webpageScreenshot1.png)
+![img2](pics/webpageScreenshot2.png)
 ## Working of the Project
 
   ### Task Input and Scheduling:
