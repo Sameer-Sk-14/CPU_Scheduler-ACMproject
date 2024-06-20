@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Task Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CPU Task Scheduler</h1>
+        <form id="taskForm">
+            <label for="taskId">Task ID:</label>
+            <input type="number" id="taskId" min="0" name="taskId" required>
+
+            <label for="arrivalTime">Arrival Time:</label>
+            <input type="number" id="arrivalTime" min="0" name="arrivalTime" required>
+
+            <label for="burstTime">Burst Time:</label>
+            <input type="number" id="burstTime" min="0" name="burstTime" required>
+
+            <button type="button" id="addTaskButton">Add Task</button>
+        </form>
+
+        <h2>Task List</h2>
+        <ul id="taskList"></ul>
+
+        <button id="submitTasksButton">Schedule</button>
+
+        <h2>Schedule and Stats</h2>
+        <div id="output"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
