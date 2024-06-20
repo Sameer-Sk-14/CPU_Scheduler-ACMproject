@@ -25,7 +25,7 @@ The webpage also shows statistics for other scheduling algorithms like First-Com
   - g++ (GNU Compiler Collection)
 - ## Steps to Execute the Code
   ### 1. Compile the C++ Code:
-  Open a terminal and navigate to the project directory. Run the following command to compile the **TaskScheduler.cpp** file:
+  Open a terminal and navigate to the project directory (**proj_dir**). Run the following command to compile the **TaskScheduler.cpp** file:
   ```console
   g++ TaskScheduler.cpp -o scheduler
   ```
@@ -44,10 +44,9 @@ The webpage also shows statistics for other scheduling algorithms like First-Com
   https://localhost:5000
   ```
   This will load the frontend interface where you can input task details and view scheduling statistics. 
-
+![img1]()
+![img2]()
 ## Working of the Project
-
-The project aims to demonstrate different CPU scheduling algorithms. The main components are:
 
   ### Task Input and Scheduling:
   User creates a list of tasks by inputing task details such as task id, arrival time, and burst time through the webpage. These details are sent to the Node.js server, which then uses the compiled C++ executable (scheduler) to perform the scheduling.
@@ -58,7 +57,7 @@ The project aims to demonstrate different CPU scheduling algorithms. The main co
   - **First-Come, First-Served** (fcfs_schedule): Schedules tasks in the order of their arrival.
   - **Round-Robin** (rr_schedule): Implements round-robin scheduling with a fixed time quantum.
   ### Displaying Statistics:
-  The results of the scheduling (including task order, start and finish times) and comparative statistics for FCFS and SJN are displayed on the webpage.
+  The results of the scheduling (including task order, start and finish times) and comparative statistics for FCFS, RR and SJN algorithms are displayed on the webpage.
 
   ### Execution Flow
   - Users input task details in the form on index.html.
@@ -67,9 +66,9 @@ The project aims to demonstrate different CPU scheduling algorithms. The main co
   - The server then executes the scheduler executable, passing the input data file (**input.txt**) as an argument.
   - The C++ program reads the input, performs the scheduling, and writes the results to std::out.
   - The Node.js server captures the outputs and sends the results back to the frontend.
-  - The frontend receives the scheduling results and displays them, along with comparative statistics for FCFS and SJN algorithms.
+  - The frontend receives the scheduling results and displays them, along with comparative statistics.
 
-### Explanation of Ratio based Scheduler
+### Explanation of Ratio based Scheduler Algorithm
 The ratio-based scheduling algorithm aims to prioritize tasks based on a ratio calculated dynamically during execution. This ratio considers both the remaining burst time of a task and its waiting time (time spent waiting to be executed).
 #### Implementation Breakdown
 
@@ -166,6 +165,13 @@ for (int i = 0; i < n; i++) {
   - Turnaround Time Calculation:
     - Calculate turnaround time (burst_time + waiting_time) for each task after scheduling completes.
 
+#### When is Ratio based Algorithm better than SJF?
+##### Scenario 1: Preventing Starvation
+  - SJF Schedule: SJF can cause starvation for long tasks if short tasks keep arriving, as long tasks might never get executed.
+  - Ratio-Based Schedule: By factoring in the waiting time, the ratio-based algorithm can prevent starvation by gradually increasing the priority of longer-waiting tasks, ensuring they eventually get processed.
+##### Scenario 2: Mix of Long and Short Tasks
+  - SJF Schedule: In environments with a mix of long and short tasks, SJF might lead to longer average turnaround times for long tasks, as they are continuously preempted by shorter tasks.
+  - Ratio-Based Schedule: The ratio-based approach can better handle this mix by balancing the priority given to short and long tasks based on their waiting times, improving fairness and potentially reducing average waiting time for longer tasks.
 ### Learning Takeaways
 From this project, I learned:
   - How to integrate C++ code with a Node.js backend.
