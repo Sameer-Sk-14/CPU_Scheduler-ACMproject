@@ -41,7 +41,7 @@ The webpage also shows statistics for other scheduling algorithms like First-Com
   ### 3. Access the Frontend:
   Open a web browser and navigate to
   ```arduino
-  https://localhost:5000
+  localhost:5000
   ```
   This will load the frontend interface where you can input task details and view scheduling statistics. 
 ![img1](pics/webpageScreenshot1.png)
