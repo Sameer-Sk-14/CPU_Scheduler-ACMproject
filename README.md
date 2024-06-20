@@ -180,3 +180,7 @@ From this project, I learned:
   - How to handle asynchronous operations in JavaScript to communicate between the frontend and backend.
   - The process of executing C++ programs from within a Node.js application.
   - This project provided a comprehensive understanding of both backend and frontend development, as well as insights into CPU scheduling algorithms.
+### Resources
+  - [Youtube playlist](https://www.youtube.com/playlist?list=PLBlnK6fEyqRitWSE_AyyySWfhRgyA-rHk)
+  - https://www.geeksforgeeks.org/program-for-shortest-job-first-or-sjf-cpu-scheduling-set-1-non-preemptive/
+  - https://www.w3schools.com/nodejs/
